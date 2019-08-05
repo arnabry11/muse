@@ -1,0 +1,5 @@
+<%= link_to "Add New Inspiration", new_post_path%><br><br><br>
+
+<% @posts.each do |post|%>
+  <h2><%=link_to post.title, post%></h2>
+<% end %>
