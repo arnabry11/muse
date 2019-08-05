@@ -5,6 +5,9 @@
 <p><%=@post.description%></p>
 <p>Author: <%=@post.user.name%></p>
 
+<p><strong><%= link_to  "Like", like_post_path(@post), method: :get %></strong> [ <%= pluralize(@post.get_upvotes.size, "like") %> ] </p>
+<p><strong><%= link_to  "DisLike", dislike_post_path(@post), method: :get %></strong> [ <%= pluralize(@post.get_downvotes.size, "dislike") %> ] </p>
+
 <h2><%= pluralize(@post.comments.count, "Comment") %></h2>
 <% @comments.each do |comment|%>
   <p>
